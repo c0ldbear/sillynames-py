@@ -7,6 +7,10 @@ firstList = [name.replace(',\n', '') for name in fFirst.readlines()] # cleans th
 fLast = open('./data/last.txt', 'r') # reads file 'first.txt'
 lastList = [name.replace(',\n', '') for name in fLast.readlines()]
 
+# Close files
+fFirst.close()
+fLast.close()
+
 # Randomly select a first and lastname
 while True:
     first = random.choice(firstList)
