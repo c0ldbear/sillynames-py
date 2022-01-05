@@ -8,11 +8,17 @@ fLast = open('./data/last.txt', 'r') # reads file 'first.txt'
 lastList = [name.replace(',\n', '') for name in fLast.readlines()]
 
 # Randomly select a first and lastname
+while True:
+    first = random.choice(firstList)
+    last = random.choice(lastList)
 
-first = random.choice(firstList)
-last = random.choice(lastList)
+    # Present the randomly generated name
+    print("A name is chosen: {} {}".format(first, last))
 
-# Present the randomly generated name
-print("A new name is chosen: {} {}".format(first, last))
-
+    choice = input("Do you want another name? (Press 'Enter' else n to quit)\n ")
+    if choice.lower() == 'n':
+        print('Exiting...')
+        break
+    else:
+        print('')
 # Option: Add 'user input' as to ask if they want to get a new name -> Repeat
