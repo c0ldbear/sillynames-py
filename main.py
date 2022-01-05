@@ -15,10 +15,8 @@ while True:
     # Present the randomly generated name
     print("A name is chosen: {} {}".format(first, last))
 
-    choice = input("Do you want another name? (Press 'Enter' else n to quit)\n ")
-    if choice.lower() == 'n':
+    choice = input("Do you want another name? (Press 'Enter' else n or q to quit)\n")
+    if choice.lower() == 'n' or choice.lower() == 'q':
         print('Exiting...')
         break
-    else:
-        print('')
 # Option: Add 'user input' as to ask if they want to get a new name -> Repeat
