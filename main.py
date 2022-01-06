@@ -1,16 +1,17 @@
+def GetNamesFromFile(filename):
+    file = open(filename, 'r')
+    nameList = [name.replace(',\n', '') for name in file.readlines()]
+    file.close() # Don't forget to close the file once done
+    return nameList
+
 def main():
     import random
 
     # Open and read 'first.txt' and 'last.txt'
-    fFirst = open('./data/first.txt', 'r') # reads file 'first.txt'
-    firstList = [name.replace(',\n', '') for name in fFirst.readlines()] # cleans the data from ',\n' after the names
-
-    fLast = open('./data/last.txt', 'r') # reads file 'first.txt'
-    lastList = [name.replace(',\n', '') for name in fLast.readlines()]
-
-    # Close files
-    fFirst.close()
-    fLast.close()
+    firstnamesFilename = './data/first.txt'
+    lastnamesFilename = './data/last.txt'
+    firstList = GetNamesFromFile(firstnamesFilename)
+    lastList = GetNamesFromFile(lastnamesFilename)
 
     # Randomly select a first and lastname
     while True:
