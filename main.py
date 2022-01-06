@@ -9,6 +9,9 @@ def GetListOfNamesFromFile(filename):
 def GetRandomNameFromList(listOfNames):
     return random.choice(listOfNames)
 
+def DisplayFullName(first, last):
+        print("A name is chosen: {} {}".format(first, last))
+
 def main():
     # Open and read 'first.txt' and 'last.txt'
     firstnamesFilename = './data/first.txt'
@@ -22,7 +25,7 @@ def main():
         last = GetRandomNameFromList(lastList)
 
         # Present the randomly generated name
-        print("A name is chosen: {} {}".format(first, last))
+        DisplayFullName()
 
         choice = input("Do you want another name? (Press 'Enter' else n or q to quit)\n")
         if choice.lower() == 'n' or choice.lower() == 'q':
