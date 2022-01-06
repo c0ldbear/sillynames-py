@@ -12,6 +12,13 @@ def GetRandomNameFromList(listOfNames):
 def DisplayFullName(first, last):
         print("A name is chosen: {} {}".format(first, last))
 
+def ContinueOrExitApp():
+    choice = input("Do you want another name? (Press 'Enter' else n or q to quit)\n")
+    if choice.lower() == 'n' or choice.lower() == 'q':
+        print('Exiting...')
+        return True 
+    return False
+
 def main():
     # Open and read 'first.txt' and 'last.txt'
     firstnamesFilename = './data/first.txt'
@@ -25,13 +32,11 @@ def main():
         last = GetRandomNameFromList(lastList)
 
         # Present the randomly generated name
-        DisplayFullName()
+        DisplayFullName(first, last)
 
-        choice = input("Do you want another name? (Press 'Enter' else n or q to quit)\n")
-        if choice.lower() == 'n' or choice.lower() == 'q':
-            print('Exiting...')
+        # Option: Add 'user input' as to ask if they want to get a new name -> Repeat
+        if ContinueOrExitApp():
             break
-    # Option: Add 'user input' as to ask if they want to get a new name -> Repeat
 
 # safe way of running python apps (good to have as a habit)
 if __name__ == '__main__':
